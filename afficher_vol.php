@@ -22,7 +22,7 @@ if (!empty($_POST["ville_depart"])) {
     $requete->execute();
 }
 
-$resultat = $requete->fetchAll(); // recupere toutes les donnée y compris leur indice (ce qui créé un doublon)
+$resultat = $requete->fetchAll(PDO::FETCH_ASSOC); // recupere toutes les donnée y compris leur indice (ce qui créé un doublon)
 
 $results["nb"] = count($resultat); // Affiche le nombre de vol
 $results["results"]["vols"] = $resultat; // Affiche la description de chaque vol
